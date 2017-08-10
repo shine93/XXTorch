@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="XXTorch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNf-dV-KgK">
+                                <rect key="frame" x="168.5" y="200" width="37" height="30"/>
+                                <state key="normal" title="Flash"/>
+                                <connections>
+                                    <action selector="actionFlash:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtM-0U-fHV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhN-hG-y5f">
+                                <rect key="frame" x="172" y="280" width="30" height="30"/>
+                                <state key="normal" title="SOS"/>
+                                <connections>
+                                    <action selector="actionSOS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CLK-QA-RcQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lf-AW-SWs">
+                                <rect key="frame" x="167.5" y="120" width="39" height="30"/>
+                                <state key="normal" title="Torch"/>
+                                <connections>
+                                    <action selector="actionTorch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VvK-iE-R2b"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.01" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="e7N-Jv-oMa">
+                                <rect key="frame" x="110" y="360" width="154" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="m3t-1G-JcW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="actionChageLight:" destination="BYZ-38-t0r" eventType="valueChanged" id="OGY-9R-iEy"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="change light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZW-pb-Ocn">
+                                <rect key="frame" x="5" y="369" width="94.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3lf-AW-SWs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="I1a-Bc-sCR"/>
+                            <constraint firstItem="LhN-hG-y5f" firstAttribute="top" secondItem="VNf-dV-KgK" secondAttribute="bottom" constant="50" id="IHB-oU-aSi"/>
+                            <constraint firstItem="LhN-hG-y5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L2F-b3-Nsi"/>
+                            <constraint firstItem="VNf-dV-KgK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oke-ep-7SZ"/>
+                            <constraint firstItem="e7N-Jv-oMa" firstAttribute="bottom" secondItem="yZW-pb-Ocn" secondAttribute="bottom" id="RHC-u1-Stq"/>
+                            <constraint firstItem="e7N-Jv-oMa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VDM-Fl-21w"/>
+                            <constraint firstItem="e7N-Jv-oMa" firstAttribute="top" secondItem="LhN-hG-y5f" secondAttribute="bottom" constant="50" id="d4R-OQ-oAK"/>
+                            <constraint firstItem="3lf-AW-SWs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g3Z-tu-ymA"/>
+                            <constraint firstItem="VNf-dV-KgK" firstAttribute="top" secondItem="3lf-AW-SWs" secondAttribute="bottom" constant="50" id="oZN-Ol-aB9"/>
+                            <constraint firstItem="yZW-pb-Ocn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="qio-Iy-yN7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="torchBtn" destination="3lf-AW-SWs" id="5EQ-Un-Hn6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
